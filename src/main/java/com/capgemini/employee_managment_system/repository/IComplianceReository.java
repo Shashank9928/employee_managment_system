@@ -5,8 +5,10 @@ import org.springframework.stereotype.Repository;
 import com.capgemini.employee_managment_system.entity.Compliance;
 
 @Repository
-public interface IComplianceReository extends JpaRepository<Compliance, String> {
+public interface IComplianceReository extends JpaRepository<Compliance, Integer> {
 
     public Compliance findByUserId(int userId);
+
+    public Compliance findByComplianceId(int complianceId);
 
 }

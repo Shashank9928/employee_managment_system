@@ -36,6 +36,9 @@ public class StatusReport {
     private String comments;
     private String details;
     private LocalDate createdDate = LocalDate.now();
+    private int u_id;
+    private int d_id;
+    private int c_id;
 
     @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
@@ -135,6 +138,48 @@ public class StatusReport {
      */
     public void setCreatedDate(LocalDate createdDate) {
         this.createdDate = createdDate;
+    }
+
+    /**
+     * @return int return the u_id
+     */
+    public int getU_id() {
+        return u_id;
+    }
+
+    /**
+     * @param u_id the u_id to set
+     */
+    public void setU_id(int u_id) {
+        this.u_id = u_id;
+    }
+
+    /**
+     * @return int return the d_id
+     */
+    public int getD_id() {
+        return d_id;
+    }
+
+    /**
+     * @param d_id the d_id to set
+     */
+    public void setD_id(int d_id) {
+        this.d_id = d_id;
+    }
+
+    /**
+     * @return int return the c_id
+     */
+    public int getC_id() {
+        return c_id;
+    }
+
+    /**
+     * @param c_id the c_id to set
+     */
+    public void setC_id(int c_id) {
+        this.c_id = c_id;
     }
 
     /**
