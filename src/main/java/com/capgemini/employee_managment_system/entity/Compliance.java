@@ -37,6 +37,7 @@ public class Compliance {
     private int employeeCount;
     private int stsCount;
     private String complianceStatus;
+    private int d_id;
 
     @OneToOne
     @JoinColumn(name = "department_id", referencedColumnName = "department_id")
@@ -46,12 +47,11 @@ public class Compliance {
         // TODO Auto-generated constructor stub
     }
 
-    public Compliance(String complianceType, String complianceDescription, LocalDate complianceDate,
+    public Compliance(String complianceType, String complianceDescription,
             int employeeCount, int stsCount, String complianceStatus) {
         /**
          * @param complianceType
          * @param complianceDescription
-         * @param complianceDate
          * @param employeeCount
          * @param stsCount
          * @param complianceStatus
@@ -68,7 +68,6 @@ public class Compliance {
 
         this.complianceType = complianceType;
         this.complianceDescription = complianceDescription;
-        this.complianceDate = complianceDate;
         this.employeeCount = employeeCount;
         this.stsCount = stsCount;
         this.complianceStatus = complianceStatus;
@@ -184,6 +183,20 @@ public class Compliance {
      */
     public void setDepartment(Department department) {
         this.department = department;
+    }
+
+    /**
+     * @return String return the d_id
+     */
+    public int getD_id() {
+        return d_id;
+    }
+
+    /**
+     * @param d_id the d_id to set
+     */
+    public void setD_id(int d_id) {
+        this.d_id = d_id;
     }
 
 }
