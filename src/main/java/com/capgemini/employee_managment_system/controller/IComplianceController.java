@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.capgemini.employee_managment_system.entity.Compliance;
 import com.capgemini.employee_managment_system.service.IComplianceService;
 
+import java.util.List;
+
 /***************************************************************************************
  * @author: Shashank Mathur
  *          Description: This is the controller class for the compliance
@@ -50,10 +52,27 @@ public class IComplianceController {
      *         and compliance object
      ***********************************************************************/
 
-    @PostMapping("/add")
+    @PostMapping("/addCompliance")
     public ResponseEntity<Compliance> addCompliance(@RequestBody Compliance compliance) {
         Compliance result = complianceService.addCompliance(compliance);
         return new ResponseEntity<>(result, HttpStatus.CREATED);
+    }
+
+    /***********************************************************************
+     * Method: getCompliance
+     * Description: This method is used to get the compliance
+     * 
+     * @param id
+     * @return ResponseEntity<Compliance> with status code as HttpStatus.OK and
+     *         compliance object
+     ***********************************************************************/
+    @GetMapping("/getAllCompliance")
+    public ResponseEntity<List<Compliance>> getCompliance() {
+        List<Compliance> result = complianceService.getAllCompliance();
+        if (result.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
 }

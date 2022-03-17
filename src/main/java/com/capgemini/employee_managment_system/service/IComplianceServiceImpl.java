@@ -9,6 +9,8 @@ import com.capgemini.employee_managment_system.entity.Department;
 import com.capgemini.employee_managment_system.repository.IComplianceReository;
 import com.capgemini.employee_managment_system.repository.IDepartmentRepository;
 
+import java.util.List;
+
 /***************************************************************************************
  * @author: Shashank Mathur
  *          Description: This is the serviceImplementation class for the
@@ -57,6 +59,19 @@ public class IComplianceServiceImpl implements IComplianceService {
         compliance1.setD_id(compliance.getD_id());
         complianceRepository.save(compliance1);
         return compliance1;
+    }
+
+    /***********************************************************************
+     * Method: getAllCompliance
+     * Description: This method is used to get all the compliance in List
+     * Formet
+     * 
+     * @return compliance List
+     ***********************************************************************/
+    @Override
+    public List<Compliance> getAllCompliance() {
+        List<Compliance> result = complianceRepository.findAll();
+        return result;
     }
 
 }

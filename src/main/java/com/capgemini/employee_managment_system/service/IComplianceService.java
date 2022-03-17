@@ -2,6 +2,8 @@ package com.capgemini.employee_managment_system.service;
 
 import com.capgemini.employee_managment_system.entity.Compliance;
 
+import java.util.List;
+
 /***************************************************************************************
  * @author: Shashank Mathur
  *          Description: This is the interface class for the compliance
@@ -19,4 +21,13 @@ public interface IComplianceService {
      * @return compliance object
      ***********************************************************************/
     public Compliance addCompliance(Compliance compliance);
+
+    /***********************************************************************
+     * Method: getAllCompliance
+     * Description: This method is used to get all the compliance in List Formet
+     * 
+     * @return compliance List
+     ***********************************************************************/
+
+    public List<Compliance> getAllCompliance();
 }
