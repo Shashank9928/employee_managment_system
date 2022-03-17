@@ -59,6 +59,7 @@ public class IStatusReportImpl implements IStatusReport {
         statusReport1.setDepartment(departmentRepository.findById(statusReport.getD_id()));
         statusReport1.setComments(statusReport.getComments());
         statusReport1.setDetails(statusReport.getDetails());
+        statusReportRepository.save(statusReport1);
         return statusReport1;
 
     }
