@@ -8,7 +8,8 @@ ReQuest:
     "employeeCount":9,
     "stsCount":6,
     "complianceStatus":"Completed",
-    "d_id":1
+    "d_id":1,
+    "u_id":1
 }
 
 
@@ -16,7 +17,7 @@ Response:
 
 201 CREATED
 {
-    "complianceId": 3,
+    "complianceId": 8,
     "complianceType": "Hardware",
     "complianceDescription": "BUILT OF SPRING BROKE",
     "complianceDate": "2022-03-17",
@@ -24,9 +25,16 @@ Response:
     "stsCount": 6,
     "complianceStatus": "Completed",
     "d_id": 1,
+    "u_id": 1,
     "department": {
         "id": 1,
         "name": "FINENCE"
+    },
+    "user": {
+        "id": 1,
+        "password": "1234",
+        "role": "SDE",
+        "result": 55
     }
 }
 
@@ -41,35 +49,7 @@ Response:
 200 OK
 [
     {
-        "complianceId": 1,
-        "complianceType": "Hardware",
-        "complianceDescription": "CPU BROKE",
-        "complianceDate": "2022-03-17",
-        "employeeCount": 5,
-        "stsCount": 6,
-        "complianceStatus": "Approved",
-        "d_id": 0,
-        "department": {
-            "id": 0,
-            "name": "IT"
-        }
-    },
-    {
-        "complianceId": 2,
-        "complianceType": "Hardware",
-        "complianceDescription": "CPU BROKE",
-        "complianceDate": "2022-03-17",
-        "employeeCount": 5,
-        "stsCount": 6,
-        "complianceStatus": "Approved",
-        "d_id": 0,
-        "department": {
-            "id": 0,
-            "name": "IT"
-        }
-    },
-    {
-        "complianceId": 3,
+        "complianceId": 5,
         "complianceType": "Hardware",
         "complianceDescription": "BUILT OF SPRING BROKE",
         "complianceDate": "2022-03-17",
@@ -77,13 +57,15 @@ Response:
         "stsCount": 6,
         "complianceStatus": "Completed",
         "d_id": 1,
+        "u_id": 0,
         "department": {
             "id": 1,
             "name": "FINENCE"
-        }
+        },
+        "user": null
     },
     {
-        "complianceId": 4,
+        "complianceId": 6,
         "complianceType": "Hardware",
         "complianceDescription": "BUILT OF SPRING BROKE",
         "complianceDate": "2022-03-17",
@@ -91,11 +73,81 @@ Response:
         "stsCount": 6,
         "complianceStatus": "Completed",
         "d_id": 1,
+        "u_id": 0,
         "department": {
             "id": 1,
             "name": "FINENCE"
+        },
+        "user": null
+    },
+    {
+        "complianceId": 7,
+        "complianceType": "Hardware",
+        "complianceDescription": "BUILT OF SPRING BROKE",
+        "complianceDate": "2022-03-17",
+        "employeeCount": 9,
+        "stsCount": 6,
+        "complianceStatus": "Completed",
+        "d_id": 1,
+        "u_id": 0,
+        "department": {
+            "id": 1,
+            "name": "FINENCE"
+        },
+        "user": null
+    },
+    {
+        "complianceId": 8,
+        "complianceType": "Hardware",
+        "complianceDescription": "BUILT OF SPRING BROKE",
+        "complianceDate": "2022-03-17",
+        "employeeCount": 9,
+        "stsCount": 6,
+        "complianceStatus": "Completed",
+        "d_id": 1,
+        "u_id": 1,
+        "department": {
+            "id": 1,
+            "name": "FINENCE"
+        },
+        "user": {
+            "id": 1,
+            "password": "1234",
+            "role": "SDE",
+            "result": 55
         }
     }
 ]
 
 
+
+GET
+http://127.0.0.1:8080/compliance/getComplianceByUserId/{User_Id}
+http://127.0.0.1:8080/compliance/getComplianceByUserId/1
+
+
+404 Not Found : If no data of User Id
+
+
+200 OK
+{
+    "complianceId": 8,
+    "complianceType": "Hardware",
+    "complianceDescription": "BUILT OF SPRING BROKE",
+    "complianceDate": "2022-03-17",
+    "employeeCount": 9,
+    "stsCount": 6,
+    "complianceStatus": "Completed",
+    "d_id": 1,
+    "u_id": 1,
+    "department": {
+        "id": 1,
+        "name": "FINENCE"
+    },
+    "user": {
+        "id": 1,
+        "password": "1234",
+        "role": "SDE",
+        "result": 55
+    }
+}

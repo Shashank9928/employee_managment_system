@@ -7,4 +7,6 @@ import com.capgemini.employee_managment_system.entity.Compliance;
 @Repository
 public interface IComplianceReository extends JpaRepository<Compliance, String> {
 
+    public Compliance findByUserId(int userId);
+
 }

@@ -30,4 +30,14 @@ public interface IComplianceService {
      ***********************************************************************/
 
     public List<Compliance> getAllCompliance();
+
+    /***********************************************************************
+     * Method: getComplianceByUserId
+     * Description: This method is used to get the compliance by UserId
+     * 
+     * @param UserId
+     * @return compliance object
+     ***********************************************************************/
+    public Compliance getComplianceByUserId(int user_id);
+
 }

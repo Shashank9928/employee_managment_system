@@ -75,4 +75,22 @@ public class IComplianceController {
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
+    /***********************************************************************
+     * Method: getComplianceByUserId
+     * Description: This method is used to get the compliance by user id
+     * 
+     * @param UserId
+     * @return ResponseEntity<Compliance> with status code as HttpStatus.OK and
+     *         compliance object with user id
+     *         HttpStatus.NotFound if data of that user id is not found
+     ***********************************************************************/
+    @GetMapping("/getComplianceByUserId/{UserId}")
+    public ResponseEntity<Compliance> getComplianceByUserId(@PathVariable("UserId") int UserId) {
+        Compliance result = complianceService.getComplianceByUserId(UserId);
+        if (result == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(result, HttpStatus.OK);
+    }
+
 }

@@ -38,10 +38,15 @@ public class Compliance {
     private int stsCount;
     private String complianceStatus;
     private int d_id;
+    private int u_id;
 
     @OneToOne
     @JoinColumn(name = "department_id", referencedColumnName = "department_id")
     private Department department;
+
+    @OneToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    private User user;
 
     public Compliance() {
         // TODO Auto-generated constructor stub
@@ -197,6 +202,34 @@ public class Compliance {
      */
     public void setD_id(int d_id) {
         this.d_id = d_id;
+    }
+
+    /**
+     * @return int return the u_id
+     */
+    public int getU_id() {
+        return u_id;
+    }
+
+    /**
+     * @param u_id the u_id to set
+     */
+    public void setU_id(int u_id) {
+        this.u_id = u_id;
+    }
+
+    /**
+     * @return User return the user
+     */
+    public User getUser() {
+        return user;
+    }
+
+    /**
+     * @param user the user to set
+     */
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }

@@ -6,8 +6,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.capgemini.employee_managment_system.entity.Compliance;
 import com.capgemini.employee_managment_system.entity.Department;
+import com.capgemini.employee_managment_system.entity.User;
 import com.capgemini.employee_managment_system.repository.IComplianceReository;
 import com.capgemini.employee_managment_system.repository.IDepartmentRepository;
+import com.capgemini.employee_managment_system.repository.IUserRepository;
 
 import java.util.List;
 
@@ -37,6 +39,9 @@ public class IComplianceServiceImpl implements IComplianceService {
     @Autowired
     private IDepartmentRepository departmentRepository;
 
+    @Autowired
+    private IUserRepository userRepository;
+
     /***********************************************************************
      * Method: addCompliance
      * Description: This method is used to add the compliance
@@ -50,6 +55,12 @@ public class IComplianceServiceImpl implements IComplianceService {
         Department department = departmentRepository.findById(compliance.getD_id());
         System.out.println(department.getName());
         Compliance compliance1 = new Compliance();
+        System.out.println(compliance.getU_id());
+        User user = userRepository.findById(compliance.getU_id());
+        System.out.println(user);
+
+        compliance1.setU_id(compliance.getU_id());
+        compliance1.setUser(user);
         compliance1.setComplianceType(compliance.getComplianceType());
         compliance1.setComplianceDescription(compliance.getComplianceDescription());
         compliance1.setEmployeeCount(compliance.getEmployeeCount());
@@ -71,6 +82,19 @@ public class IComplianceServiceImpl implements IComplianceService {
     @Override
     public List<Compliance> getAllCompliance() {
         List<Compliance> result = complianceRepository.findAll();
+        return result;
+    }
+
+    /***********************************************************************
+     * Method: getComplianceByUserId
+     * Description: This method is used to get the compliance
+     * 
+     * @param id
+     * @return compliance object
+     ***********************************************************************/
+    @Override
+    public Compliance getComplianceByUserId(int userId) {
+        Compliance result = complianceRepository.findByUserId(userId);
         return result;
     }
 
