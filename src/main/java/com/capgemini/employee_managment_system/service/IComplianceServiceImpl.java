@@ -9,21 +9,42 @@ import com.capgemini.employee_managment_system.entity.Department;
 import com.capgemini.employee_managment_system.repository.IComplianceReository;
 import com.capgemini.employee_managment_system.repository.IDepartmentRepository;
 
+/***************************************************************************************
+ * @author: Shashank Mathur
+ *          Description: This is the serviceImplementation class for the
+ *          compliance
+ *          Date: 17-3-2022
+ *          version: 1.0
+ **************************************************************************************/
+
+/*
+ * @Transactional: It is used to make a transaction management for the
+ * application.
+ * 
+ */
 @Service
 @Transactional
 public class IComplianceServiceImpl implements IComplianceService {
-
+    /**
+     * @Autowired: It enables to inject object dependency implicitly.
+     * 
+     */
     @Autowired
     private IComplianceReository complianceRepository;
 
     @Autowired
     private IDepartmentRepository departmentRepository;
 
+    /***********************************************************************
+     * Method: addCompliance
+     * Description: This method is used to add the compliance
+     * 
+     * @param compliance
+     * @return compliance object
+     ***********************************************************************/
+
     @Override
-    public void addCompliance(Compliance compliance) {
-        System.out.println("********************************CHECK HERE************************************");
-        System.out.println(compliance.getComplianceDate());
-        System.out.println(compliance.getD_id());
+    public Compliance addCompliance(Compliance compliance) {
         Department department = departmentRepository.findById(compliance.getD_id());
         System.out.println(department.getName());
         Compliance compliance1 = new Compliance();
@@ -35,7 +56,7 @@ public class IComplianceServiceImpl implements IComplianceService {
         compliance1.setDepartment(department);
         compliance1.setD_id(compliance.getD_id());
         complianceRepository.save(compliance1);
-        System.out.println("********************************ADDED************************************");
+        return compliance1;
     }
 
 }
