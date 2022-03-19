@@ -1,7 +1,7 @@
 package com.capgemini.employee_managment_system.entity;
 
 import java.time.LocalDate;
-
+import java.util.*;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,9 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
+
+//import javax.validation.constraints.NotNull;
 
 /**********************************************************************************************
  * - @author Shashank Mathur
@@ -35,6 +37,8 @@ public class Employee {
     private String lastName;
     private String email;
     private LocalDate dateOfBirth;
+    private int u_id;
+    private int d_id;
 
     @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
@@ -69,9 +73,6 @@ public class Employee {
         this.dateOfBirth = dateOfBirth;
     }
 
-    /**
-     * @return int return the id
-     */
     public int getId() {
         return id;
     }
@@ -137,6 +138,34 @@ public class Employee {
      */
     public void setDateOfBirth(LocalDate dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    /**
+     * @return int return the u_id
+     */
+    public int getU_id() {
+        return u_id;
+    }
+
+    /**
+     * @param u_id the u_id to set
+     */
+    public void setU_id(int u_id) {
+        this.u_id = u_id;
+    }
+
+    /**
+     * @return int return the d_id
+     */
+    public int getD_id() {
+        return d_id;
+    }
+
+    /**
+     * @param d_id the d_id to set
+     */
+    public void setD_id(int d_id) {
+        this.d_id = d_id;
     }
 
     /**
