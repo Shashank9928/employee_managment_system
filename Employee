@@ -1,0 +1,49 @@
+\\	Employee MODULE
+
+Add employee :
+POST :       Body  , raw   ,JSON
+
+http://localhost:9090/employeeController/addCust
+{
+        "firstName" : "Lakshita",
+        "lastName" : "Mathur",
+        "email" : "Lakshita@gmail.com",
+        "dateOfBirth" : "2000-06-28",
+        "u_id" : 1,
+        "d_id" : 0
+}
+
+
+
+GET METHOD
+----------
+http://localhost:9090/customerController/viewAllCustomer
+---------------------------------------------------------------------------
+OUTPUT
+-----
+
+ 
+    {
+        "id": 25,
+        "firstName": "Lakshita",
+        "lastName": "Mathur",
+        "email": "Lakshita@gmail.com",
+        "dateOfBirth": "2000-06-28",
+        "u_id": 1,
+        "d_id": 0,
+        "user": {
+           "id": 1,
+           "password": "1234",
+           "role": "SDE",
+           "result": 55
+    }
+
+   
+ ---------------------------------------------------------------------------
+ 
+ 
+ 
+ 
+ 
+ 
+ 
