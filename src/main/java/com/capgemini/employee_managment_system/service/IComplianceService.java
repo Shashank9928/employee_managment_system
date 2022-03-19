@@ -38,6 +38,6 @@ public interface IComplianceService {
      * @param UserId
      * @return compliance object
      ***********************************************************************/
-    public Compliance getComplianceByUserId(int user_id);
+    public List<Compliance> getComplianceByUserId(int user_id);
 
 }

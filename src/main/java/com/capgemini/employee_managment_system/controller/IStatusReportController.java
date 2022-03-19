@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.capgemini.employee_managment_system.entity.StatusReport;
 import com.capgemini.employee_managment_system.service.IStatusReport;
 
+import java.util.List;
+
 /***************************************************************************************
  * @author: Shashank Mathur
  *          Description: This is the controller class for the StatusReport
@@ -54,5 +56,18 @@ public class IStatusReportController {
     public ResponseEntity<StatusReport> addStatusReport(@RequestBody StatusReport statusReport) {
         StatusReport result = statusReportService.addStatusReport(statusReport);
         return new ResponseEntity<>(result, HttpStatus.CREATED);
+    }
+
+    /***********************************************************************
+     * Method: AllStatusReport
+     * Description: This method is used to get all the statusReport
+     * 
+     * @return ResponseEntity<List<StatusReport>> with status code as HttpStatus.OK
+     *         and statusReport object
+     ***********************************************************************/
+    @GetMapping("/allStatusReport")
+    public ResponseEntity<List<StatusReport>> AllStatusReport() {
+        List<StatusReport> result = statusReportService.AllStatusReport();
+        return new ResponseEntity<>(result, HttpStatus.OK);
     }
 }

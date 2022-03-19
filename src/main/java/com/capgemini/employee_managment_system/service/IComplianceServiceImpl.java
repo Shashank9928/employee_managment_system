@@ -89,12 +89,12 @@ public class IComplianceServiceImpl implements IComplianceService {
      * Method: getComplianceByUserId
      * Description: This method is used to get the compliance
      * 
-     * @param id
-     * @return compliance object
+     * @param userId
+     * @return List of compliance
      ***********************************************************************/
     @Override
-    public Compliance getComplianceByUserId(int userId) {
-        Compliance result = complianceRepository.findByUserId(userId);
+    public List<Compliance> getComplianceByUserId(int userId) {
+        List<Compliance> result = complianceRepository.findByUserId(userId);
         return result;
     }
 

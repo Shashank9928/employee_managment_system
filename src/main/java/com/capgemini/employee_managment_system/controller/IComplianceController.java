@@ -85,9 +85,9 @@ public class IComplianceController {
      *         HttpStatus.NotFound if data of that user id is not found
      ***********************************************************************/
     @GetMapping("/getComplianceByUserId/{UserId}")
-    public ResponseEntity<Compliance> getComplianceByUserId(@PathVariable("UserId") int UserId) {
-        Compliance result = complianceService.getComplianceByUserId(UserId);
-        if (result == null) {
+    public ResponseEntity<List<Compliance>> getComplianceByUserId(@PathVariable("UserId") int UserId) {
+        List<Compliance> result = complianceService.getComplianceByUserId(UserId);
+        if (result.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(result, HttpStatus.OK);

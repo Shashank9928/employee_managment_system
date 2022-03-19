@@ -13,6 +13,8 @@ import com.capgemini.employee_managment_system.repository.IDepartmentRepository;
 import com.capgemini.employee_managment_system.repository.IUserRepository;
 import com.capgemini.employee_managment_system.repository.IStatusReportRepository;
 
+import java.util.List;
+
 /***************************************************************************************
  * @author: Shashank Mathur
  *          Description: This is the serviceImplementation class for the
@@ -62,6 +64,17 @@ public class IStatusReportImpl implements IStatusReport {
         statusReportRepository.save(statusReport1);
         return statusReport1;
 
+    }
+
+    /***********************************************************************
+     * Method: AllStatusReport
+     * Description: This method is used to get all the StatusReport
+     * 
+     * @return List statusReport object
+     ***********************************************************************/
+    @Override
+    public List<StatusReport> AllStatusReport() {
+        return statusReportRepository.findAll();
     }
 
 }
