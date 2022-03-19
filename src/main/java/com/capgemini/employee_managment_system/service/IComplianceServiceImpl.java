@@ -53,7 +53,7 @@ public class IComplianceServiceImpl implements IComplianceService {
     @Override
     public Compliance addCompliance(Compliance compliance) {
         Department department = departmentRepository.findById(compliance.getD_id());
-        System.out.println(department.getName());
+        System.out.println(department.getDepartName());
         Compliance compliance1 = new Compliance();
         System.out.println(compliance.getU_id());
         User user = userRepository.findById(compliance.getU_id());

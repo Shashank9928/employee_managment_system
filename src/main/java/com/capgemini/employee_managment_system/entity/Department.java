@@ -7,12 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.CascadeType;
-import javax.validation.constraints.NotNull;
 
 /**********************************************************************************************
  * - @author Shashank Mathur
@@ -58,30 +54,30 @@ public class Department {
     }
 
     /**
-     * @return int return the id
+     * @return integer return the id
      */
-    public int getId() {
+    public int getDepartId() {
         return id;
     }
 
     /**
      * @param id the id to set
      */
-    public void setId(int id) {
+    public void setDepartId(int id) {
         this.id = id;
     }
 
     /**
      * @return String return the name
      */
-    public String getName() {
+    public String getDepartName() {
         return name;
     }
 
     /**
      * @param name the name to set
      */
-    public void setName(String name) {
+    public void setDepartName(String name) {
         this.name = name;
     }
 
