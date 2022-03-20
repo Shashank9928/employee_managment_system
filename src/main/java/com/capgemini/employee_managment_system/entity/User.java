@@ -29,6 +29,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id")
     private int id;
+    private String userName;
     private String password;
     private String role;
     private int result;
@@ -37,18 +38,31 @@ public class User {
         // TODO Auto-generated constructor stub
     }
 
-    public User(String password, String role, int result) {
-        /**
-         * @param password
-         * @param role
-         * @param result
-         *                 Constructor for User class with parameters password,role,
-         *                 result
-         *                 to assign value to the variables of User class while creating
-         *                 object of
-         *                 User class
+    public User(String userName, String password, String role, int result) {
+        /*
+         * @author Shashank Mathur
          * 
+         * @Description: This is a parameterized constructor which is used to
+         * initialize the instance variables.
+         * 
+         * @param userName
+         * 
+         * @param password
+         * 
+         * @param role
+         * 
+         * @param result
+         * 
+         * @since 17-03-2021
+         * 
+         * @version 1.0
+         * 
+         * @Last modified by Shashank Mathur
+         * 
+         * @Last modified time 17-03-2021
          */
+        super();
+        this.userName = userName;
         this.password = password;
         this.role = role;
         this.result = result;
@@ -66,6 +80,20 @@ public class User {
      */
     public void setId(int id) {
         this.id = id;
+    }
+
+    /**
+     * @return String return the userName
+     */
+    public String getUserName() {
+        return userName;
+    }
+
+    /**
+     * @param userName the userName to set
+     */
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     /**
