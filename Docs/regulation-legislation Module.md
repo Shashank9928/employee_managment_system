@@ -1,11 +1,11 @@
-## Regulation-Legislation Module API DOCS
+## Regulation-Legislation  Module API DOCS
 
 >### Add Compliance:-
 >- **Endpoint:** http://127.0.0.1:8080/compliance/addCompliance
 >- **Methord:** POST
 >- **Status Code:**
 > i. 	201 CREATED: On Success.
-> - Request Data:
+> **- Request Data:**
 > >
 > > ```js
 > >{
@@ -25,8 +25,10 @@
 >- **Status Code:**
 > i. 	201 CREATED: On Success.
 > ii. 204 No Content: No Data.
-> - Request Data:
+> 
+> **- Request Data:**
 > >
+>  **-Response Data**
 > > ```js
 > >[
 > >		{
@@ -113,8 +115,10 @@
 >- **Status Code:**
 > i. 	201 CREATED: On Success.
 > ii. 404 Not Found : If no data of User Id
-> - Request Data:
+> 
+> **- Request Data:**
 > >
+>  **-Response Data**
 > > ```js
 > >[
 > >		{
@@ -208,8 +212,10 @@
 >- **Status Code:**
 > i. 	201 CREATED: On Success.
 > ii. 404 Not Found : If no data .
-> - Request Data:
+> 
+> **- Request Data:**
 > >
+> **-Response Data**
 > > ```js
 > >[
 > >		{

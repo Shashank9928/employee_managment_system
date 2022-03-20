@@ -1,72 +1,101 @@
-POST- http://127.0.0.1:8080/departmentController/addDepartment
+## Department Module API DOCS
 
-REQUEST-
-{
-    "name": "Management"
-}
-
-RESPONSE-
-{
-    "departId": 22,
-    "departName": null
-}
-
-
-GET- http://127.0.0.1:8080/departmentController/getAllDepartment
-
-REQUEST-
-
-RESPONSE-
-[
-    {
-        "departId": 0,
-        "departName": "IT"
-    },
-    {
-        "departId": 1,
-        "departName": "FINENCE"
-    },
-    {
-        "departId": 21,
-        "departName": null
-    }
-]
-
-
-GET- http://127.0.0.1:8080/departmentController/getAllDepartmentByPagination/{maxPage}
-
-REQUEST-
-
-RESPONSE-
-[
-    {
-        "departId": 0,
-        "departName": "IT"
-    },
-    {
-        "departId": 1,
-        "departName": "FINENCE"
-    },
-    {
-        "departId": 21,
-        "departName": null
-    }
-]
+>### Add Department:-
+>- **Endpoint:** http://127.0.0.1:8080/departmentController/addDepartment
+>- **Methord:** POST
+>- **Status Code:**
+> i. 	201 CREATED: On Success.
+> 
+> **- Request Data:**
+> > ```js
+> >{
+> >		"departName": "Management"
+> >}
+> **- Response Data:**
+> > ```js
+> >{
+> >		"departId": 22,
+> >		"departName": "Management"
+> >}
+>
+>### Get All Department:-
+>- **Endpoint:** http://127.0.0.1:8080/departmentController/getAllDepartment
+>- **Methord:** GET
+>- **Status Code:**
+> i. 	201 CREATED: On Success.
+> ii 204 No Content: When No data present. 
+> 
+> **- Request Data:**
+>
+> **- Response Data:**
+> > ```js
+> >[
+> >		{
+> >			"departId": 0,
+> >			"departName": "IT"
+> >		},
+> >		{
+> >			"departId": 1,
+> >			"departName": "FINENCE"
+> >		},
+> >		{
+> >			"departId": 21,
+> >			"departName": null
+> >		}
+> >]
+>
 
 
-GET- http://127.0.0.1:8080/departmentController/getCount
+>### Get All Department By Pagination:-
+>- **Endpoint:** http://127.0.0.1:8080/departmentController/getAllDepartmentByPagination/{maxPage}
+>- **Methord:** GET
+>- **Status Code:**
+> i. 	201 CREATED: On Success.
+> ii 204 No Content: When No data present. 
+> 
+> **- Request Data:**
+>
+> **- Response Data:**
+> > ```js
+> >[
+> >		{
+> >			"departId": 0,
+> >			"departName": "IT"
+> >		},
+> >		{
+> >			"departId": 1,
+> >			"departName": "FINENCE"
+> >		},
+> >		{
+> >			"departId": 21,
+> >			"departName": null
+> >		}
+> >]
+>
 
-REQUEST-
+>### Get All Department Count:-
+>- **Endpoint:** http://127.0.0.1:8080/departmentController/getCount
+>- **Methord:** GET
+>- **Status Code:**
+> i. 	201 CREATED: On Success.
+> ii 204 No Content: When No data present. 
+> 
+> **- Request Data:**
+>
+> **- Response Data:**
+> > ```js
+> >	3
+>
 
-RESPONSE- 
-3
-Status:200 OK
-
-
-DELETE- http://127.0.0.1:8080/departmentController/deleteDepartment/{departId}
-
-REQUEST-
-
-RESPONSE-
-Status: 202 Accepted
+>### Delete Department:-
+>- **Endpoint:** http://127.0.0.1:8080/departmentController/deleteDepartment/{departId}
+>- **Methord:** GET
+>- **Status Code:**
+> i. 	202 Accepted: On Success.
+> ii 204 No Content: When No data present. 
+> 
+> **- Request Data:**
+>
+> **- Response Data:**
+>
 

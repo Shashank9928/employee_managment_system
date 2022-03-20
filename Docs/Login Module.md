@@ -57,7 +57,7 @@
 
 >###  Get All Users:-
 >- **Endpoint:** http://127.0.0.1:8080/authentication/getAllUsers
->- **Methord:** POST
+>- **Methord:** GET
 >- **Status Code:**
 > i. 	201 CREATED: On Success.
 > **- Request Data:**
