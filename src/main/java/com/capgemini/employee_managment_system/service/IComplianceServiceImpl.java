@@ -52,13 +52,18 @@ public class IComplianceServiceImpl implements IComplianceService {
 
     @Override
     public Compliance addCompliance(Compliance compliance) {
-        Department department = departmentRepository.findById(compliance.getD_id());
-        System.out.println(department.getDepartName());
-        Compliance compliance1 = new Compliance();
-        System.out.println(compliance.getU_id());
-        User user = userRepository.findById(compliance.getU_id());
-        System.out.println(user);
 
+        // Find the department object by provided Depetment Id
+        Department department = departmentRepository.findById(compliance.getD_id());
+
+        // Find the user object by provided User Id
+
+        User user = userRepository.findById(compliance.getU_id());
+
+        // Creating The Compliance Object
+        Compliance compliance1 = new Compliance();
+
+        // Setting the data into the compliance object
         compliance1.setU_id(compliance.getU_id());
         compliance1.setUser(user);
         compliance1.setComplianceType(compliance.getComplianceType());
@@ -68,7 +73,9 @@ public class IComplianceServiceImpl implements IComplianceService {
         compliance1.setComplianceStatus(compliance.getComplianceStatus());
         compliance1.setDepartment(department);
         compliance1.setD_id(compliance.getD_id());
+        // Saving New Data into the Database
         complianceRepository.save(compliance1);
+        // Return the newly saved object
         return compliance1;
     }
 
