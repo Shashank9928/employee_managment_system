@@ -5,9 +5,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.capgemini.employee_managment_system.entity.StatusReport;
-import com.capgemini.employee_managment_system.entity.User;
-import com.capgemini.employee_managment_system.entity.Compliance;
-import com.capgemini.employee_managment_system.entity.Department;
 import com.capgemini.employee_managment_system.repository.IComplianceReository;
 import com.capgemini.employee_managment_system.repository.IDepartmentRepository;
 import com.capgemini.employee_managment_system.repository.IUserRepository;
@@ -55,12 +52,20 @@ public class IStatusReportImpl implements IStatusReport {
     @Override
     public StatusReport addStatusReport(StatusReport statusReport) {
         StatusReport statusReport1 = new StatusReport();
-
+        // Find the department object by provided Depetment Id
         statusReport1.setCompliance(complianceRepository.findByComplianceId(statusReport.getC_id()));
+
+        // Find the user object by provided User Id and set it to the statusReport
         statusReport1.setUser(userRepository.findById(statusReport.getU_id()));
+
+        // Find the department object by provided Depetment Id and set it to the
+        // statusReport
         statusReport1.setDepartment(departmentRepository.findById(statusReport.getD_id()));
+
         statusReport1.setComments(statusReport.getComments());
         statusReport1.setDetails(statusReport.getDetails());
+
+        // Save the status report in the database, and return it afterwards.
         statusReportRepository.save(statusReport1);
         return statusReport1;
 
