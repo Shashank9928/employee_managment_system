@@ -10,6 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/*/*****************************************************************************
+ *IUserService interface is used to perform CRUD operations on User entity.
+ *
+ * Created By: Amey Pethkar 
+ *              
+ *******************************************************************************/
 @Service
 @Transactional
 public class IUserServiceImpl implements IUserService {
