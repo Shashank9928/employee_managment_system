@@ -49,7 +49,7 @@ public class IDepartmentController {
      */
 
     @PostMapping("/addDepartment")
-    public ResponseEntity<Department> addDepartment(@RequestBody Departmentdao department) {
+    public ResponseEntity<Department> addDepartment(@RequestBody Department department) {
         Department departmentimpl = idepartmentservice.addDepartment(department);
         return new ResponseEntity(departmentimpl, HttpStatus.CREATED);
     }

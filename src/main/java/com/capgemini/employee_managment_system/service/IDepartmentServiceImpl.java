@@ -33,11 +33,11 @@ public class IDepartmentServiceImpl implements IDepartmentService {
      */
 
     @Override
-    public Department addDepartment(Departmentdao departmentdao) {
-        Department department = new Department();
-        department.setDepartId(departmentdao.getDepartId());
-        department.setDepartName(departmentdao.getDepartName());
-        return idepartmentrepository.save(department);
+    public Department addDepartment(Department department) {
+        Department depart = new Department();
+        depart.setDepartId(department.getDepartId());
+        depart.setDepartName(department.getDepartName());
+        return idepartmentrepository.save(depart);
     }
 
     /*********************************************************************************************************************

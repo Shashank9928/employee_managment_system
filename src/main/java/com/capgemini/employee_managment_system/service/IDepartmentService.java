@@ -13,7 +13,7 @@ import com.capgemini.employee_managment_system.dao.Departmentdao;
  *******************************************************************************/
 
 public interface IDepartmentService {
-    public Department addDepartment(Departmentdao departmentdao);
+    public Department addDepartment(Department department);
 
     public List<Department> getAllDepartment();
 
