@@ -20,7 +20,7 @@ public interface IComplianceService {
      * @param compliance
      * @return compliance object
      ***********************************************************************/
-    public Compliance addCompliance(Compliance compliance);
+    public Compliance addCompliance(Compliance compliance) throws Exception;
 
     /***********************************************************************
      * Method: getAllCompliance

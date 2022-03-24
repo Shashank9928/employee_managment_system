@@ -7,6 +7,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.capgemini.employee_managment_system.entity.Compliance;
 import com.capgemini.employee_managment_system.entity.Department;
 import com.capgemini.employee_managment_system.entity.User;
+import com.capgemini.employee_managment_system.exception.DepartmentNotFoundException;
+import com.capgemini.employee_managment_system.exception.UserNotFoundException;
 import com.capgemini.employee_managment_system.repository.IComplianceReository;
 import com.capgemini.employee_managment_system.repository.IDepartmentRepository;
 import com.capgemini.employee_managment_system.repository.IUserRepository;
@@ -51,14 +53,21 @@ public class IComplianceServiceImpl implements IComplianceService {
      ***********************************************************************/
 
     @Override
-    public Compliance addCompliance(Compliance compliance) {
+    public Compliance addCompliance(Compliance compliance) throws Exception {
 
         // Find the department object by provided Depetment Id
         Department department = departmentRepository.findById(compliance.getD_id());
+        if (department == null) {
+            throw new DepartmentNotFoundException("Department Id is not valid");
+        }
 
         // Find the user object by provided User Id
 
         User user = userRepository.findById(compliance.getU_id());
+
+        if (user == null) {
+            throw new UserNotFoundException("User Id is not valid");
+        }
 
         // Creating The Compliance Object
         Compliance compliance1 = new Compliance();
